@@ -2,7 +2,28 @@ from decimal import Decimal
 from types import GeneratorType
 import uuid
 
+def recurse_set(to_do, getter):
+    """
+    Recursively get a set of objects from a set of objects using a getter function that returns a set of objects.
+    Args:
+        to_do (_type_): the set of objects to get
+        getter (_type_): the function to get the objects from the set
 
+    Returns:
+        _type_: the fully extended set of objects from the set
+    """
+    done = set()
+    res = set()
+    while to_do:
+        obj = to_do.pop()
+        if obj in done:
+            continue
+        res.add(obj)
+        done.add(obj)
+        to_do.update(getter(obj))
+    return res
+        
+        
 def dataframe_sum(df, *fields):
     if fields:
         return df.groupby(fields).agg('sum').to_dict(orient='records')
