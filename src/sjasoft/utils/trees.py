@@ -1,8 +1,8 @@
 __author__ = 'samantha'
 
-from sjautils.class_utils import immediate_superclasses
-from sjautils.category import identity_function
-from sjautils.properties import reader, accessor
+from sjasoft.utils.class_utils import immediate_superclasses
+from sjasoft.utils.category import identity_function
+from sjasoft.utils.properties import reader, accessor
 from itertools import chain
 node_value = lambda x: x.value
 node_itself = identity_function

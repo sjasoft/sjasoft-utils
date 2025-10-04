@@ -1,5 +1,5 @@
-from sjautils.subprocess_utils import command_out_err
-from sjautils.string import after, before
+from sjasoft.utils.subprocess_utils import command_out_err
+from sjasoft.utils.string import after, before
 import os, shutil
 
 def unrar(path, remove_after=True):
